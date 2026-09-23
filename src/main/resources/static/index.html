@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>UC Migration Regression Test Suite</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/application.css">
+
+    <script
+        src="/script/application.js"
+        defer>
+    </script>
+</head>
+
+<body>
+    <main class="page-container">
+
+        <header class="page-header">
+            <h1>UC Migration Regression Test Suite</h1>
+
+            <p>
+                Upload the customer workbook and select the required operation.
+            </p>
+        </header>
+
+        <section class="operation-panel">
+
+            <h2>Run Regression Test</h2>
+
+            <label for="customerWorkbook">
+                Customer Excel file
+            </label>
+
+            <input
+                id="customerWorkbook"
+                name="customerWorkbook"
+                type="file"
+                accept=".xlsx">
+
+            <p class="help-text">
+                The workbook must contain a column named
+                <strong>customerId</strong>.
+            </p>
+
+            <div class="button-container">
+                <button
+                    id="fetchButton"
+                    type="button"
+                    disabled>
+                    Fetch
+                </button>
+
+                <button
+                    id="fetchAndVerifyButton"
+                    type="button"
+                    disabled>
+                    Fetch and Verify
+                </button>
+            </div>
+
+            <div
+                id="progressMessage"
+                class="message progress-message hidden">
+
+                <span class="spinner"></span>
+                <span id="progressText">
+                    The operation is running. Please wait.
+                </span>
+            </div>
+
+            <div
+                id="successMessage"
+                class="message success-message hidden">
+
+                <h3>Operation completed successfully</h3>
+
+                <div class="result-row">
+                    <span class="result-label">Build ID:</span>
+                    <span id="buildId"></span>
+                </div>
+
+                <div class="result-row">
+                    <span class="result-label">Result:</span>
+                    <span id="resultMessage"></span>
+                </div>
+            </div>
+
+            <div
+                id="errorMessage"
+                class="message error-message hidden">
+
+                <h3>Operation failed</h3>
+                <p id="errorText"></p>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
