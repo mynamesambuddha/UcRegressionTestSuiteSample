@@ -2,6 +2,10 @@ pipeline {
 
     agent any
 
+    environment {
+        GIT_SSL_NO_VERIFY = 'true'
+    }
+
     parameters {
         choice(
             name: 'CUCUMBER_TAG',
